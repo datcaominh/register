@@ -66,4 +66,22 @@ public class UserDAO {
         }
         return null;
     }
+    public model findByUsername(String username) {
+        String sql = "SELECT * FROM helloworld WHERE username=?";
+        try (Connection conn = DBConnectionMySQL.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                model user = new model();
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                return user;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

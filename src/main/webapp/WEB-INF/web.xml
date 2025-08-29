@@ -40,6 +40,15 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+     <!-- ForgetPassServlet -->
+    <servlet>
+        <servlet-name>ForgetPassServlet</servlet-name>
+        <servlet-class>servlet.ForgetPassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForgetPassServlet</servlet-name>
+        <url-pattern>/forgetpass</url-pattern>
+    </servlet-mapping>
     
 <servlet>
     <servlet-name>RegisterServlet</servlet-name>
